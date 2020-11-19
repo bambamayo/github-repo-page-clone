@@ -3,6 +3,15 @@
   --color-text-primary: #24292e;
   --color-white: #fff;
   --color-header-bg: #24292e;
+  --color-grey-pri: #777;
+  --color-black: #000;
+  --color-grey-light: #eaecef;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 html {
@@ -20,6 +29,7 @@ body {
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 /********************* End of Base Styles *****************/
@@ -27,7 +37,7 @@ a {
 /********************* Header Styles *****************/
 .header {
   height: 6.2rem;
-  background-color: red;
+  background-color: var(--color-header-bg);
   display: flex;
   align-items: center;
 }
@@ -39,12 +49,13 @@ a {
   margin: auto;
   height: calc(6.2rem / 2);
   justify-content: space-between;
+  color: var(--color-white);
 }
 
 .header__nav-left {
   display: flex;
   height: 100%;
-  flex-basis: 50%;
+  flex-basis: 80%;
   align-items: center;
 }
 
@@ -58,6 +69,7 @@ a {
 .logo-box__link {
   font-size: 3rem;
   cursor: pointer;
+  transition: 0.2s ease-in opacity;
 }
 
 .logo-box__link:hover,
@@ -68,20 +80,178 @@ a {
 .header__search-box {
   position: relative;
   height: 100%;
-  width: 40%;
+  margin-right: 2rem;
 }
 
 .header__search-input {
-  padding: 0.5rem 1.2rem;
-  width: 90%;
+  padding: 0.7rem 1.2rem;
+  width: 24.3rem;
   border-radius: 0.5rem;
-  border: 0.1rem solid var(--color-white);
+  border: 0.1rem solid var(--color-grey-pri);
   font-size: 1.4rem;
   background-color: transparent;
+  outline: none;
+  color: var(--color-white);
+  transition: 0.2s ease-in width;
 }
 
 .header__search-image {
   position: absolute;
-  right: 2%;
-  top: 10%;
+  right: 3%;
+  top: 55%;
+  transform: translateY(-55%);
+  z-index: 0;
+}
+
+.header__search-input:focus {
+  width: 54.2rem;
+  background-color: var(--color-white);
+}
+
+.header__search-input:focus + .header__search-image {
+  display: none;
+}
+
+.header__main-nav {
+  display: flex;
+}
+
+.header__main-nav-item {
+  font-weight: 600;
+}
+
+.header__main-nav-item:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.header__main-nav-link {
+  cursor: pointer;
+  transition: 0.2s ease-in opacity;
+}
+
+.header__main-nav-link:hover,
+.header__main-nav-link:focus {
+  opacity: 0.7;
+}
+
+.header__nav-right {
+  display: flex;
+  flex-basis: 7%;
+  justify-content: space-between;
+}
+
+.add_new,
+.profile_details {
+  height: 100%;
+  cursor: pointer;
+  transition: 0.2s ease-in all;
+  display: flex;
+  align-items: center;
+  padding: none;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--color-white);
+}
+
+.add_new-l {
+  font-size: 2.5rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.add_new-r,
+.profile_details-r {
+  font-size: 1.3rem;
+}
+
+.add_new:hover,
+.add_new:focus,
+.profile_details:hover,
+.profile_details:focus {
+  opacity: 0.7;
+}
+
+.profile_image {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  margin-right: 0.5rem;
+  object-fit: cover;
+}
+/********************* End Of Header Styles *****************/
+
+/********************* Start Of Tab Nav Styles *****************/
+.tab-nav__container {
+  margin-top: 1.5rem;
+  border-bottom: 0.1rem solid var(--color-grey-light);
+}
+
+.tab-nav__inner {
+  max-width: 124.8rem;
+  margin: auto;
+  display: flex;
+  padding: 1rem 0 0 0;
+  align-items: center;
+}
+
+.tab-nav__user {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  flex-basis: 25%;
+  height: 5rem;
+}
+
+.tab-nav__user-image {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 100%;
+  margin-right: 0.5rem;
+  object-fit: cover;
+  display: none;
+}
+
+.tab-nav__user span {
+  display: none;
+}
+
+.tab-nav__list {
+  display: flex;
+  flex-basis: 75%;
+  align-items: center;
+}
+
+.tab-nav__icon,
+.tab-nav__text {
+  margin-right: 0.2rem;
+}
+
+.tab-nav__count {
+  background-color: #d1d5da80;
+  border-radius: 5rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.tab-nav__btn {
+  height: 5rem;
+  display: inline-block;
+  transition: 0.2s ease-in all;
+  border: none;
+  border-bottom: 0.4rem solid transparent;
+  cursor: pointer;
+  padding: 0.8rem 1.6rem;
+  background-color: var(--color-white);
+  color: var(--color-header-bg);
+  font-weight: 400;
+}
+
+.tab-nav__btn:hover,
+.tab-nav__btn:focus {
+  border-bottom: 0.3rem solid var(--color-grey-light);
+}
+
+.tab-nav__btn.tab-nav__btn--active {
+  border-bottom: 0.3rem solid #f9826c;
+  font-weight: 600;
 }

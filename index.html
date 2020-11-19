@@ -33,24 +33,110 @@
               class="header__search-image"
             />
           </div>
-          <ul>
-            <li><a>Pull requests</a></li>
-            <li><a>Issues</a></li>
-            <li><a>Marketplace</a></li>
-            <li><a>Explore</a></li>
+          <ul class="header__main-nav">
+            <li class="header__main-nav-item">
+              <a href="#" class="header__main-nav-link">Pull requests</a>
+            </li>
+            <li class="header__main-nav-item">
+              <a href="#" class="header__main-nav-link">Issues</a>
+            </li>
+            <li class="header__main-nav-item">
+              <a href="#" class="header__main-nav-link">Marketplace</a>
+            </li>
+            <li class="header__main-nav-item">
+              <a href="#" class="header__main-nav-link">Explore</a>
+            </li>
           </ul>
         </div>
         <div class="header__nav-right">
-          <div>
-            <span><i class="fas fa-plus"></i></span>
-            <span><i class="fas fa-caret-down"></i></span>
+          <div class="header__add_new">
+            <button class="add_new">
+              <span class="add_new-l">&plus;</span>
+              <span class="add_new-r"><i class="fas fa-caret-down"></i></span>
+            </button>
           </div>
-          <div>
-            <img src="assets/author.jpg" style="width: 20px; height: 20px" />
-            <span><i class="fas fa-caret-down"></i></span>
+          <div class="header__profile_details">
+            <button class="profile_details">
+              <img
+                class="profile_image"
+                src="assets/author.jpg"
+                style="width: 20px; height: 20px"
+              />
+              <span class="profile_details-r"
+                ><i class="fas fa-caret-down"></i
+              ></span>
+            </button>
           </div>
         </div>
       </div>
     </header>
+    <!-- END OF HEADER -->
+    <main>
+      <!-- START OF TAB NAV -->
+      <div class="tab-nav__container">
+        <div class="tab-nav__inner">
+          <div class="tab-nav__user">
+            <img src="assets/author.jpg" alt="" class="tab-nav__user-image" />
+            <span>bambamayo</span>
+          </div>
+          <div class="tab-nav__list">
+            <button class="tab-nav__btn">
+              <span class="tab-nav__icon"
+                ><i class="fas fa-book-open"></i
+              ></span>
+              <span class="tab-nav__text">Overview</span>
+            </button>
+            <button class="tab-nav__btn tab-nav__btn--active">
+              <span class="tab-nav__icon"><i class="fas fa-print"></i></span>
+              <span class="tab-nav__text">Repositories</span>
+              <span class="tab-nav__count">20</span>
+            </button>
+
+            <button class="tab-nav__btn">
+              <span class="tab-nav__icon"><i class="far fa-file-alt"></i></span>
+              <span class="tab-nav__text">Projects</span>
+            </button>
+            <button class="tab-nav__btn">
+              <span class="tab-nav__icon"><i class="fas fa-cube"></i></span>
+              <span class="tab-nav__text">Packages</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- END OF TAB NAV -->
+      <div class="container">
+        <aside class="sidebar">
+          <div class="profile-picture-cont">
+            <img
+              src="assets/author.jpg"
+              style="width: 260px; height: 260px"
+              class="profile-picture"
+              alt
+            />
+            <span>
+              <svg
+                class="octicon octicon-smiley"
+                viewBox="0 0 16 16"
+                version="1.1"
+                width="16"
+                height="16"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zM5 8a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zM5.32 9.636a.75.75 0 011.038.175l.007.009c.103.118.22.222.35.31.264.178.683.37 1.285.37.602 0 1.02-.192 1.285-.371.13-.088.247-.192.35-.31l.007-.008a.75.75 0 111.222.87l-.614-.431c.614.43.614.431.613.431v.001l-.001.002-.002.003-.005.007-.014.019a1.984 1.984 0 01-.184.213c-.16.166-.338.316-.53.445-.63.418-1.37.638-2.127.629-.946 0-1.652-.308-2.126-.63a3.32 3.32 0 01-.715-.657l-.014-.02-.005-.006-.002-.003v-.002h-.001l.613-.432-.614.43a.75.75 0 01.183-1.044h.001z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="user-details">
+            <h3>ayobami agunroye</h3>
+            <h4>bambamayo</h4>
+            <p>software craftsman</p>
+          </div>
+        </aside>
+        <section class="repos">repos</section>
+      </div>
+    </main>
   </body>
 </html>
