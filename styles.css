@@ -67,9 +67,16 @@ a {
 }
 
 .logo-box__link {
-  font-size: 3rem;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   transition: 0.2s ease-in opacity;
+  color: var(--color-white);
+  border-radius: 100%;
+}
+
+.logo {
+  fill: var(--color-white);
 }
 
 .logo-box__link:hover,
@@ -162,7 +169,7 @@ a {
 
 .add_new-r,
 .profile_details-r {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .add_new:hover,
@@ -224,7 +231,11 @@ a {
 
 .tab-nav__icon,
 .tab-nav__text {
-  margin-right: 0.2rem;
+  margin-right: 0.7rem;
+}
+
+.tab-nav__icon {
+  align-self: center;
 }
 
 .tab-nav__count {
@@ -235,10 +246,11 @@ a {
 
 .tab-nav__btn {
   height: 5rem;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   transition: 0.2s ease-in all;
   border: none;
-  border-bottom: 0.4rem solid transparent;
+  border-bottom: 0.3rem solid transparent;
   cursor: pointer;
   padding: 0.8rem 1.6rem;
   background-color: var(--color-white);
@@ -255,3 +267,98 @@ a {
   border-bottom: 0.3rem solid #f9826c;
   font-weight: 600;
 }
+
+/********************* End Of Tab Nav Styles *****************/
+
+/********************* Start Of Main Container Styles *****************/
+
+.container {
+  display: flex;
+  width: 90%;
+
+  margin: auto;
+}
+
+.sidebar {
+  width: 31.2rem;
+  padding: 0 1.6rem;
+}
+
+.profile-picture-cont {
+  position: relative;
+  top: -3rem;
+}
+
+.profile-picture {
+  height: 26rem;
+  width: 26rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.status-icon {
+  display: flex;
+  height: 3.8rem;
+  width: 3.8rem;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 2rem;
+  bottom: 4rem;
+  border: 1px solid rgb(234, 236, 239);
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.user-details {
+  width: 93.6rem;
+  padding: 0 1.6rem;
+  margin-top: -2rem;
+}
+
+.user-details__name {
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+.user-details__username {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-top: -0.5rem;
+}
+
+.user-details__info {
+  font-size: 1.6rem;
+  margin-top: 1.2rem;
+}
+
+.repos {
+  width: 100%;
+}
+
+.find_repo {
+  height: 6.5rem;
+  display: flex;
+  align-items: center;
+  padding: 1.6rem 0;
+  border-bottom: 0.1rem solid var(--color-grey-light);
+}
+
+.find_repo-input {
+  padding: 0.7rem 1.2rem;
+  width: 100%;
+  border: 0.1rem solid var(--color-grey-light);
+  border-radius: 0.6rem;
+}
+
+.find_repo-input:focus,
+.find_repo-input:active {
+  border-color: #0366d6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+}
+
+/********************* End Of Main Container Styles *****************/
