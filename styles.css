@@ -179,13 +179,23 @@ a {
   opacity: 0.7;
 }
 
-.profile_image {
+.hold {
   width: 2rem;
   height: 2rem;
   border-radius: 100%;
   margin-right: 0.5rem;
-  object-fit: cover;
+  display: inline-block;
+  border: 1px solid transparent;
 }
+
+.profile_image {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+  visibility: hidden;
+}
+
 /********************* End Of Header Styles *****************/
 
 /********************* Start Of Tab Nav Styles *****************/
@@ -289,11 +299,19 @@ a {
   top: -3rem;
 }
 
-.profile-picture {
+.hold-image {
   height: 26rem;
   width: 26rem;
+  border-radius: 50%;
+  border: 0.1rem solid var(--color-grey-light);
+}
+
+.profile-picture {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   border-radius: 50%;
+  visibility: hidden;
 }
 
 .status-icon {
