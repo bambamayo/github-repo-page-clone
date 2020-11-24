@@ -200,8 +200,19 @@ a {
 
 /********************* Start Of Tab Nav Styles *****************/
 .tab-nav__container {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   border-bottom: 0.1rem solid var(--color-grey-light);
+  width: 100%;
+  background-color: var(--color-white);
+}
+
+.fixed {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  left: 0;
+  /* padding-top: -7.7rem; */
 }
 
 .tab-nav__inner {
@@ -213,24 +224,21 @@ a {
 }
 
 .tab-nav__user {
-  display: flex;
   align-items: center;
   font-weight: 600;
   flex-basis: 25%;
   height: 5rem;
+  transition: 0.2s ease-in all;
+  display: flex;
+  opacity: 0;
 }
 
 .tab-nav__user-image {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 100%;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
   object-fit: cover;
-  display: none;
-}
-
-.tab-nav__user span {
-  display: none;
 }
 
 .tab-nav__list {
@@ -250,8 +258,14 @@ a {
 
 .tab-nav__count {
   background-color: #d1d5da80;
-  border-radius: 5rem;
-  padding: 0.2rem 0.5rem;
+  border-radius: 2rem;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .tab-nav__btn {
@@ -297,6 +311,7 @@ a {
 .profile-picture-cont {
   position: relative;
   top: -3rem;
+  z-index: 3;
 }
 
 .hold-image {
@@ -379,4 +394,155 @@ a {
   box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
 }
 
+.repo-count {
+  padding: 1.6rem 0;
+  border-bottom: 0.1rem solid var(--color-grey-light);
+  display: inline-block;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+.user-repos-item {
+  width: 100%;
+  padding: 2.4rem 0;
+  border-bottom: 0.1rem solid var(--color-grey-light);
+  display: flex;
+}
+
+.user-repos-item-l {
+  flex-basis: 75%;
+}
+
+.user-repos-item-r {
+  flex-basis: 25%;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-start;
+}
+
+.user-repos-item-l-t {
+  margin-bottom: 0.4rem;
+}
+
+.repo-name {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.repo-name-link,
+.repo-name-link:visited {
+  color: #0366d6;
+}
+
+.user-repos-l-m {
+  margin-bottom: 2rem;
+}
+
+.repo-desc {
+  margin-bottom: 0.8rem;
+  padding-right: 2.4rem;
+  color: #586069;
+  width: 75%;
+}
+
+.user-repos-item-l-b {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.lang,
+.stars,
+.forks {
+  margin-right: 1.6rem;
+}
+
+.lang-color {
+  height: 1.2rem;
+  width: 1.2rem;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.icon-link,
+.icon {
+  transition: 0.3s ease-in all;
+}
+
+.icon-link:hover,
+.icon-link:focus,
+.icon-link:hover .icon,
+.icon-link:focus .icon {
+  color: #0366d6;
+  fill: #0366d6;
+}
+
+.icon {
+  vertical-align: text-bottom;
+  fill: inherit;
+}
+
+.star-btn {
+  color: var(--color-text-primary);
+  background-color: #fafbfc;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 0.6rem;
+  padding: 0.5rem 1.3rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04),
+    inset 0 1px 0 hsla(0, 0%, 100%, 0.25);
+  cursor: pointer;
+  transition: 0.2s ease-in all;
+}
+
+.star-btn:hover {
+  background-color: rgb(243, 244, 246);
+  border-color: rgba(27, 31, 35, 0.15);
+}
+
 /********************* End Of Main Container Styles *****************/
+
+/********************* Start Of Footer Styles *****************/
+.footer {
+  width: 93%;
+  height: 12rem;
+  margin: auto;
+  margin-top: 2.3rem;
+  border-top: 0.1rem solid var(--color-grey-light);
+}
+
+.footer-inner {
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: space-between;
+  color: rgb(88, 96, 105);
+  height: 100%;
+  align-items: center;
+}
+
+.footer-list {
+  flex-basis: 120rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-list-link {
+  color: #0366d6;
+}
+
+.footer-icon {
+  fill: rgb(209, 213, 218);
+}
+
+.footer-icon-link:hover .footer-icon {
+  fill: rgb(106, 115, 125);
+}
+
+.footer-list-link:hover,
+.footer-list-link:focus {
+  text-decoration: underline;
+}
