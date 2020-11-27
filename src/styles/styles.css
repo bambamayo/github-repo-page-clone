@@ -32,6 +32,19 @@ a {
   text-decoration: none;
 }
 
+/************ MEDIA QUERIES ************/
+@media (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 /********************* End of Base Styles *****************/
 
 /********************* Header Styles *****************/
@@ -42,21 +55,29 @@ a {
   align-items: center;
 }
 
+.menu-icon {
+  display: none;
+}
+
+.menu-icon-btn {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+.menu-icon-icon {
+  fill: var(--color-white);
+}
+
 .header__inner {
   display: flex;
   align-items: center;
   width: 95%;
   margin: auto;
   height: calc(6.2rem / 2);
-  justify-content: space-between;
   color: var(--color-white);
-}
-
-.header__nav-left {
-  display: flex;
-  height: 100%;
-  flex-basis: 80%;
-  align-items: center;
 }
 
 .logo-box {
@@ -82,6 +103,12 @@ a {
 .logo-box__link:hover,
 .logo-box__link:focus {
   opacity: 0.7;
+}
+
+.header-main-cont {
+  flex-basis: 90%;
+  display: flex;
+  align-items: center;
 }
 
 .header__search-box {
@@ -111,8 +138,8 @@ a {
 }
 
 .header__search-input:focus {
-  width: 54.2rem;
   background-color: var(--color-white);
+  width: 54.2rem;
 }
 
 .header__search-input:focus + .header__search-image {
@@ -123,8 +150,11 @@ a {
   display: flex;
 }
 
-.header__main-nav-item {
-  font-weight: 600;
+.dashboard,
+.settings,
+.nav__profile-details,
+.signout {
+  display: none;
 }
 
 .header__main-nav-item:not(:last-child) {
@@ -134,17 +164,12 @@ a {
 .header__main-nav-link {
   cursor: pointer;
   transition: 0.2s ease-in opacity;
+  font-weight: 600;
 }
 
 .header__main-nav-link:hover,
 .header__main-nav-link:focus {
   opacity: 0.7;
-}
-
-.header__nav-right {
-  display: flex;
-  flex-basis: 7%;
-  justify-content: space-between;
 }
 
 .add_new,
@@ -196,6 +221,115 @@ a {
   visibility: hidden;
 }
 
+/***************** MEDIA QUERIES ************************/
+
+@media (max-width: 1100px) {
+  .header__search-input:focus {
+    background-color: var(--color-white);
+    width: 24.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .header-sm {
+    height: auto;
+    padding: 1.5rem 0;
+  }
+
+  .header__inner {
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .header-main-cont {
+    display: none;
+  }
+
+  .header__add_new {
+    display: none;
+  }
+
+  .header__profile_details {
+    display: none;
+  }
+
+  .logo-box {
+    width: 50%;
+  }
+
+  .header-main-cont-sm {
+    display: flex;
+    width: 100%;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    align-items: flex-start;
+  }
+
+  .header__search-box {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    margin-top: -1rem;
+  }
+
+  .header__search-input {
+    width: 100%;
+  }
+
+  .header__search-input:focus {
+    width: 100%;
+  }
+
+  .header__search-image {
+    right: 1rem;
+    top: 52%;
+  }
+
+  .header__main-nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .dashboard,
+  .settings,
+  .nav__profile-details,
+  .signout {
+    display: block;
+  }
+
+  .sm-flex-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .tab-nav__user-image-sm {
+    width: 2rem !important;
+    height: 2rem !important;
+    margin-right: 0.5rem !important;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+
+  .header__main-nav-item {
+    padding: 0.8rem 0;
+    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+    width: 100%;
+  }
+
+  .fill-white {
+    fill: var(--color-white);
+    vertical-align: text-bottom;
+  }
+}
+
 /********************* End Of Header Styles *****************/
 
 /********************* Start Of Tab Nav Styles *****************/
@@ -212,11 +346,10 @@ a {
   top: 0;
   width: 100%;
   left: 0;
-  /* padding-top: -7.7rem; */
 }
 
 .tab-nav__inner {
-  max-width: 124.8rem;
+  width: 92%;
   margin: auto;
   display: flex;
   padding: 1rem 0 0 0;
@@ -292,19 +425,41 @@ a {
   font-weight: 600;
 }
 
+/************ MEDIA QUERIES **************/
+@media (max-width: 1248px) {
+  .tab-nav__user {
+    flex-basis: 30%;
+  }
+
+  .tab-nav__list {
+    flex-basis: 70%;
+  }
+}
+
+@media (max-width: 956px) {
+  .tab-nav__user {
+    flex-basis: 33%;
+  }
+
+  .tab-nav__list {
+    flex-basis: 67%;
+  }
+}
+
 /********************* End Of Tab Nav Styles *****************/
 
 /********************* Start Of Main Container Styles *****************/
 
 .container {
   display: flex;
-  width: 90%;
-
+  width: 91%;
   margin: auto;
+
+  justify-content: space-between;
 }
 
 .sidebar {
-  width: 31.2rem;
+  max-width: 30rem;
   padding: 0 1.6rem;
 }
 
@@ -344,6 +499,10 @@ a {
   box-shadow: rgba(27, 31, 35, 0.04) 0px 1px;
   z-index: 2;
   cursor: pointer;
+}
+
+.status-text {
+  display: none;
 }
 
 .user-details {
@@ -506,6 +665,78 @@ a {
 
 /********************* End Of Main Container Styles *****************/
 
+/******** MEDIA QUERIES *********/
+@media (max-width: 768px) {
+  .flex-sm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab-nav__container {
+    order: 2;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: auto;
+  }
+
+  .sidebar {
+    display: flex;
+    max-width: 100%;
+    padding: 0;
+    align-items: center;
+    position: relative;
+    margin-bottom: 13rem;
+  }
+
+  .profile-picture-cont {
+    position: static;
+    margin-right: 2rem;
+  }
+
+  .hold-image {
+    width: 15.207rem;
+    height: 15.207rem;
+  }
+
+  .status-icon {
+    position: absolute;
+    width: 100%;
+    bottom: -7rem;
+    border-radius: 0.75rem;
+    left: 0;
+    justify-content: flex-start;
+  }
+
+  .user-details__name {
+    font-size: 3.2rem;
+  }
+
+  .user-details__username {
+    font-size: 2.5rem;
+  }
+
+  .smiley {
+    margin-left: 1rem;
+  }
+
+  .status-text {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .user-details__info {
+    position: absolute;
+    bottom: -11rem;
+    left: 0;
+    font-size: 2rem;
+  }
+}
+
 /********************* Start Of Footer Styles *****************/
 .footer {
   width: 93%;
@@ -545,4 +776,19 @@ a {
 .footer-list-link:hover,
 .footer-list-link:focus {
   text-decoration: underline;
+}
+
+/****** MEDIA QUERIES ********/
+@media (max-width: 1012px) {
+  .footer {
+    width: 80%;
+  }
+
+  .footer-list {
+    flex-wrap: wrap;
+  }
+
+  .footer-icon-link {
+    display: none;
+  }
 }

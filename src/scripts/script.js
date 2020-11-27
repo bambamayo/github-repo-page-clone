@@ -1,6 +1,9 @@
+import { setRepoUpdateTime } from "./helpers";
+
 let user_fullname = document.querySelector(".user-details__name");
 let user_username = document.querySelector(".user-details__username");
 let user_bio = document.querySelector(".user-details__info");
+
 let profile_image = document.querySelector(".profile_image");
 let profile_picture = document.querySelector(".profile-picture");
 let public_count = document.querySelector(".public-count");
@@ -9,16 +12,13 @@ let repo_list = document.querySelector(".user-repos-list");
 let tab_nav = document.querySelector(".tab-nav__container");
 let tab_nav_user = document.querySelector(".tab-nav__user");
 let tab_nav_image = document.querySelector(".tab-nav__user-image");
+let tab_nav_image_sm = document.querySelector(".tab-nav__user-image-sm");
 let tab_nav_username = document.querySelector(".tab-nav__user-uname");
 let tab_user = document.querySelector(".tab-nav__user-image");
+let menu_bar = document.querySelector(".menu-icon-btn");
+let header_main_nav = document.querySelector(".header-main-cont");
+let header = document.querySelector(".header");
 let tab_nav_offSet = tab_nav.offsetTop;
-
-function setRepoUpdateTime(isostring) {
-  let date = new Date(isostring);
-  let dateToDateStringArr = date.toDateString().split(" ");
-
-  return `${dateToDateStringArr[1]} ${dateToDateStringArr[2]}`;
-}
 
 function getUserData() {
   const FETCH_USER = {
@@ -63,7 +63,7 @@ function getUserData() {
   fetch("https://api.github.com/graphql", {
     method: "post",
     headers: {
-      Authorization: `Bearer `,
+      Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
     },
     body: body,
   })
@@ -77,6 +77,8 @@ function getUserData() {
       public_count.textContent = data.data.user.repositories.totalCount;
       tab_nav_image.src = data.data.user.avatarUrl;
       tab_nav_image.alt = `${data.data.user.name} avatar`;
+      tab_nav_image_sm.src = data.data.user.avatarUrl;
+      tab_nav_image_sm.alt = `${data.data.user.name} avatar`;
       profile_image.src = data.data.user.avatarUrl;
       profile_image.alt = `${data.data.user.name} avatar`;
       profile_picture.src = data.data.user.avatarUrl;
@@ -191,7 +193,7 @@ function getUserData() {
 
 getUserData();
 
-//Code for sticky Navigation
+//-----------Code for sticky Navigation
 function stickyNavigation() {
   if (window.scrollY > tab_nav_offSet) {
     tab_nav.classList.add("fixed");
@@ -207,3 +209,9 @@ function stickyNavigation() {
 }
 
 window.addEventListener("scroll", stickyNavigation);
+
+//----------- Code for small screen menu
+menu_bar.addEventListener("click", function () {
+  header_main_nav.classList.toggle("header-main-cont-sm");
+  header.classList.toggle("header-sm");
+});

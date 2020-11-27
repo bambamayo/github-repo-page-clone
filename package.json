@@ -1,0 +1,29 @@
+{
+  "name": "git-repopage-clone",
+  "version": "1.0.0",
+  "description": "my github repo list page clone with html, css and js",
+  "main": "script.js",
+  "scripts": {
+    "dev": "rm -rf ./development && rm -rf ./.cache && parcel ./src/index.html --out-dir development -p 3000",
+    "build": "parcel build ./src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bambamayo/buycoins-test.git"
+  },
+  "author": "ayobami agunroye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bambamayo/buycoins-test/issues"
+  },
+  "homepage": "https://github.com/bambamayo/buycoins-test#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/runtime-corejs2": "^7.12.5",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
