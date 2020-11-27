@@ -231,13 +231,16 @@ a {
 }
 
 @media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 2rem 0;
+  }
   .menu-icon {
     display: block;
   }
 
   .header-sm {
     height: auto;
-    padding: 1.5rem 0;
   }
 
   .header__inner {
@@ -275,12 +278,14 @@ a {
 
   .header__search-box {
     width: 100%;
-    margin-bottom: 1.5rem;
-    margin-top: -1rem;
+    margin-bottom: 1.875rem;
+    margin-top: 0.5rem;
   }
 
   .header__search-input {
     width: 100%;
+    padding: 0 1.7rem;
+    line-height: 2.5;
   }
 
   .header__search-input:focus {
@@ -288,7 +293,7 @@ a {
   }
 
   .header__search-image {
-    right: 1rem;
+    right: 1.25rem;
     top: 52%;
   }
 
@@ -311,17 +316,18 @@ a {
   }
 
   .tab-nav__user-image-sm {
-    width: 2rem !important;
-    height: 2rem !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
     margin-right: 0.5rem !important;
     border-radius: 100%;
     object-fit: cover;
   }
 
   .header__main-nav-item {
-    padding: 0.8rem 0;
+    padding: 1rem 0;
     border-top: 1px solid hsla(0, 0%, 100%, 0.15);
     width: 100%;
+    font-size: 1.75rem;
   }
 
   .fill-white {
@@ -332,11 +338,17 @@ a {
 
 /********************* End Of Header Styles *****************/
 
-/********************* Start Of Tab Nav Styles *****************/
+/********************* Start Of Main Body Styles *****************/
+.flex-sm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .tab-nav__container {
   margin-top: 1rem;
   border-bottom: 0.1rem solid var(--color-grey-light);
-  width: 100%;
+  flex-basis: 100%;
   background-color: var(--color-white);
 }
 
@@ -383,6 +395,11 @@ a {
 .tab-nav__icon,
 .tab-nav__text {
   margin-right: 0.7rem;
+  fill: rgb(149, 157, 165);
+}
+
+.tab-nav__icon {
+  fill: rgb(36, 41, 46);
 }
 
 .tab-nav__icon {
@@ -425,42 +442,9 @@ a {
   font-weight: 600;
 }
 
-/************ MEDIA QUERIES **************/
-@media (max-width: 1248px) {
-  .tab-nav__user {
-    flex-basis: 30%;
-  }
-
-  .tab-nav__list {
-    flex-basis: 70%;
-  }
-}
-
-@media (max-width: 956px) {
-  .tab-nav__user {
-    flex-basis: 33%;
-  }
-
-  .tab-nav__list {
-    flex-basis: 67%;
-  }
-}
-
-/********************* End Of Tab Nav Styles *****************/
-
-/********************* Start Of Main Container Styles *****************/
-
-.container {
-  display: flex;
-  width: 91%;
-  margin: auto;
-
-  justify-content: space-between;
-}
-
 .sidebar {
   max-width: 30rem;
-  padding: 0 1.6rem;
+  padding: 0 1.6rem 0 4.5%;
 }
 
 .profile-picture-cont {
@@ -470,8 +454,8 @@ a {
 }
 
 .hold-image {
-  height: 26rem;
-  width: 26rem;
+  height: 28rem;
+  width: 28rem;
   border-radius: 50%;
   border: 0.1rem solid var(--color-grey-light);
 }
@@ -493,7 +477,7 @@ a {
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: 2rem;
+  right: -4rem;
   bottom: 4rem;
   border: 1px solid rgb(234, 236, 239);
   box-shadow: rgba(27, 31, 35, 0.04) 0px 1px;
@@ -506,9 +490,9 @@ a {
 }
 
 .user-details {
-  width: 93.6rem;
   padding: 0 1.6rem;
   margin-top: -2rem;
+  width: 28rem;
 }
 
 .user-details__name {
@@ -528,7 +512,8 @@ a {
 }
 
 .repos {
-  width: 100%;
+  width: 73%;
+  padding-right: 4.5%;
 }
 
 .find_repo {
@@ -544,6 +529,7 @@ a {
   width: 100%;
   border: 0.1rem solid var(--color-grey-light);
   border-radius: 0.6rem;
+  font-size: 1.4rem;
 }
 
 .find_repo-input:focus,
@@ -663,9 +649,50 @@ a {
   border-color: rgba(27, 31, 35, 0.15);
 }
 
-/********************* End Of Main Container Styles *****************/
+/********************* End Of Main Body Styles *****************/
 
 /******** MEDIA QUERIES *********/
+@media (max-width: 1328px) {
+  .repos {
+    width: 72%;
+  }
+}
+@media (max-width: 1248px) {
+  .tab-nav__user {
+    flex-basis: 30%;
+  }
+
+  .tab-nav__list {
+    flex-basis: 70%;
+  }
+}
+
+@media (max-width: 1208px) {
+  .repos {
+    width: 69%;
+  }
+}
+
+@media (max-width: 988px) {
+  .repos {
+    width: 67%;
+  }
+}
+
+@media (max-width: 956px) {
+  .tab-nav__user {
+    flex-basis: 33%;
+  }
+
+  .tab-nav__list {
+    flex-basis: 67%;
+  }
+
+  .repos {
+    width: 65%;
+  }
+}
+
 @media (max-width: 768px) {
   .flex-sm {
     display: flex;
@@ -676,39 +703,58 @@ a {
     order: 2;
   }
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    margin: auto;
+  .tab-nav__inner {
+    width: 100%;
+    padding-left: 2.5%;
+  }
+
+  .tab-nav__user {
+    display: none;
+  }
+
+  .tab-nav__btn {
+    font-size: 1.75rem;
+    border-bottom: 0.3rem solid transparent;
+  }
+
+  .tab-nav__btn.tab-nav__btn--active {
+    border-bottom: 0.25rem solid #f9826c;
   }
 
   .sidebar {
     display: flex;
     max-width: 100%;
-    padding: 0;
+    padding: 0 2.5%;
     align-items: center;
     position: relative;
     margin-bottom: 13rem;
+    order: 1;
   }
 
   .profile-picture-cont {
     position: static;
     margin-right: 2rem;
+    max-width: 15.125rem;
   }
 
   .hold-image {
-    width: 15.207rem;
-    height: 15.207rem;
+    width: 100%;
+    height: 100%;
   }
 
   .status-icon {
     position: absolute;
-    width: 100%;
+    width: 95%;
     bottom: -7rem;
     border-radius: 0.75rem;
-    left: 0;
+    left: 2.5%;
     justify-content: flex-start;
+  }
+
+  .user-details {
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
   }
 
   .user-details__name {
@@ -732,8 +778,85 @@ a {
   .user-details__info {
     position: absolute;
     bottom: -11rem;
-    left: 0;
+    left: 2.5%;
     font-size: 2rem;
+  }
+
+  .repos {
+    order: 3;
+    padding: 0 2.5%;
+    width: 100%;
+  }
+
+  .user-repos-item-l-t {
+    margin-bottom: 0.5rem;
+  }
+
+  .user-repos-item {
+    padding: 3rem 0;
+    border-bottom: 0.125rem solid var(--color-grey-light);
+  }
+
+  .repo-name {
+    font-size: 2.5rem;
+  }
+
+  .user-repos-l-m {
+    margin-bottom: 2.5rem;
+  }
+
+  .repo-desc {
+    margin-bottom: 1rem;
+    padding-right: 3rem;
+    color: #586069;
+    width: 75%;
+  }
+
+  .user-repos-item-l-b {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .lang,
+  .stars,
+  .forks {
+    margin-right: 2rem;
+  }
+
+  .lang-color {
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-block;
+    border-radius: 50%;
+  }
+
+  .star-btn {
+    padding: 0.625rem 1.625rem;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 520px) {
+    .tab-nav__inner {
+      width: 100%;
+
+      padding-left: 0;
+    }
+    .tab-nav__list {
+      flex-basis: 100%;
+    }
+    .tab-nav__icon {
+      display: none;
+    }
+
+    .tab-nav__count {
+      margin-left: 1rem;
+    }
+
+    .tab-nav__text {
+      margin-right: 0;
+    }
   }
 }
 
@@ -756,7 +879,7 @@ a {
 }
 
 .footer-list {
-  flex-basis: 120rem;
+  flex-basis: 95%;
   display: flex;
   justify-content: space-between;
 }
@@ -781,14 +904,29 @@ a {
 /****** MEDIA QUERIES ********/
 @media (max-width: 1012px) {
   .footer {
-    width: 80%;
+    width: 85%;
   }
 
   .footer-list {
     flex-wrap: wrap;
   }
 
+  .footer-list-item {
+    align-self: center;
+  }
+
   .footer-icon-link {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-list-item {
+    margin-right: 1.5rem;
   }
 }
