@@ -456,7 +456,7 @@ a {
 .hold-image {
   height: 28rem;
   width: 28rem;
-  border-radius: 50%;
+  border-radius: 100%;
   border: 0.1rem solid var(--color-grey-light);
 }
 
@@ -464,7 +464,7 @@ a {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 100%;
   visibility: hidden;
 }
 
@@ -725,41 +725,50 @@ a {
     display: flex;
     max-width: 100%;
     padding: 0 2.5%;
-    align-items: center;
     position: relative;
-    margin-bottom: 13rem;
+    margin-bottom: 12rem;
     order: 1;
   }
 
   .profile-picture-cont {
     position: static;
-    margin-right: 2rem;
-    max-width: 15.125rem;
+    max-width: 16.66667%;
+    margin-bottom: 1rem;
+    top: 0;
+    overflow: none;
+    margin-right: 2.5rem;
   }
 
   .hold-image {
-    max-width: 100%;
+    width: 100%;
     height: 100%;
   }
 
   .profile-picture {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 
   .status-icon {
     position: absolute;
     width: 95%;
-    bottom: -7rem;
+    bottom: -5rem;
     border-radius: 0.75rem;
     left: 2.5%;
     justify-content: flex-start;
   }
 
+  .status-icon-sm {
+    width: 95%;
+    margin: auto;
+  }
+
   .user-details {
     margin-top: 0;
     padding: 0;
-    width: 100%;
+    width: 78%;
+    align-self: center;
   }
 
   .user-details__name {
@@ -782,7 +791,7 @@ a {
 
   .user-details__info {
     position: absolute;
-    bottom: -11rem;
+    bottom: -9rem;
     left: 2.5%;
     font-size: 2rem;
   }
