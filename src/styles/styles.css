@@ -844,12 +844,12 @@ a {
 
   @media (max-width: 520px) {
     .tab-nav__container {
-      overflow: scroll;
+      width: 100%;
     }
     .tab-nav__inner {
-      width: 100%;
+      width: 95%;
       padding-left: 0;
-      overflow: scroll;
+      overflow: auto;
     }
     .tab-nav__list {
       flex-basis: 100%;
@@ -925,6 +925,12 @@ a {
 
   .footer-icon-link {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 8rem;
   }
 }
 
